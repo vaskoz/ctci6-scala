@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/vaskoz/ctci6-scala.svg?branch=master)](https://travis-ci.org/vaskoz/ctci6-scala)
+
 # ctci6-scala
 Cracking the Coding Interview 6th Edition done in Scala
 
