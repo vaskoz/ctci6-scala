@@ -5,9 +5,9 @@ object Four {
 
   def oddOccurences(str: String): List[(Char, Int)] = {
     val groupByLower = noSpaces(str).groupBy(char => char.toLower)
-    val countOccurencesMap = groupByLower.map(countTuple => (countTuple._1, countTuple._2.length))
+    val countOccurencesMap = groupByLower map { case (character, letters) => (character, letters.length) }
     val countOccurences = countOccurencesMap.toList
-    val oddCountsOnly = countOccurences.filter(countTuple => countTuple._2 % 2 != 0)
+    val oddCountsOnly = countOccurences filter { case (character, occurences) => occurences % 2 != 0 }
     oddCountsOnly
   }
 
