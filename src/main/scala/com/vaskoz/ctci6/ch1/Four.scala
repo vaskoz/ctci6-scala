@@ -5,9 +5,11 @@ object Four {
 
   def oddOccurences(str: String): List[(Char, Int)] = {
     val groupByLower = noSpaces(str).groupBy(x => x.toLower)
-    val countOccurences = groupByLower.map(x => (x._1, x._2.length)).toList
-    countOccurences.filter(x => x._2 % 2 != 0)
+    val countOccurencesMap = groupByLower.map(x => (x._1, x._2.length))
+    val countOccurences = countOccurencesMap.toList
+    val oddCountsOnly = countOccurences.filter(x => x._2 % 2 != 0)
+    return oddCountsOnly
   }
-  
+
   def noSpaces(str: String): String = str.filterNot(x => x.isSpaceChar)
 }
